@@ -3,3 +3,7 @@
 ################################################################################
 
 /EzBudget.Web/ClientApp/node_modules
+/EzBudget.Web/obj
+/EzBudget.Web/bin/Debug/netcoreapp3.1
+/EzBudget.Web/.vs/EzBudget.Web
+/.vs/EzBudget.Web
