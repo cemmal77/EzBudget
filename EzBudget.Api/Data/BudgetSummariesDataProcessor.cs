@@ -36,10 +36,11 @@ namespace EzBudget.Api.Data
                 budgetSummaries = this.jsonReader.ReadData<ICollection<BudgetSummary>>("", "BudgetSummaries.json").ToList();
             }
 
-            int index = budgetSummaries.Any() ? budgetSummaries.FindIndex(item => item.Id == budgetSummary.Id) : 0;
+            int index = budgetSummaries.FindIndex(item => item.Id == budgetSummary.Id);
 
-            budgetSummaries[index] = budgetSummary;
-
+            if (index > -1) budgetSummaries[index] = budgetSummary;
+            else budgetSummaries.Add(budgetSummary);
+            
             this.jsonWriter.WriteData("", "BudgetSummaries.json", budgetSummaries);
         }
 

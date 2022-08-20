@@ -11,3 +11,9 @@
 /EzBudget.Api/obj
 /EzBudget.Data/bin/Debug/netstandard2.1
 /EzBudget.Data/obj
+/EzBudget.Api/bin/Release/netcoreapp3.1
+/EzBudget.Api/Properties/PublishProfiles
+/EzBudget.Data/bin/Release/netstandard2.1
+/EzBudget.Web/bin/Release/netcoreapp3.1
+/EzBudget.Web/Properties/PublishProfiles
+/EzBudget.Web/ClientApp/build
