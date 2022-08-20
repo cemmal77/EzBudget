@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EzBudget.Web", "EzBudget.Web\EzBudget.Web.csproj", "{BA71C255-F1B2-4C1B-AFA4-1431DD919B67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzBudget.Api", "EzBudget.Api\EzBudget.Api.csproj", "{C81453F5-A4EF-4984-A41B-85175A46BCD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzBudget.Data", "EzBudget.Data\EzBudget.Data.csproj", "{5ED4C02D-0D80-4B90-9161-42F914ABE554}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BA71C255-F1B2-4C1B-AFA4-1431DD919B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA71C255-F1B2-4C1B-AFA4-1431DD919B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA71C255-F1B2-4C1B-AFA4-1431DD919B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81453F5-A4EF-4984-A41B-85175A46BCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81453F5-A4EF-4984-A41B-85175A46BCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81453F5-A4EF-4984-A41B-85175A46BCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81453F5-A4EF-4984-A41B-85175A46BCD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED4C02D-0D80-4B90-9161-42F914ABE554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED4C02D-0D80-4B90-9161-42F914ABE554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED4C02D-0D80-4B90-9161-42F914ABE554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED4C02D-0D80-4B90-9161-42F914ABE554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

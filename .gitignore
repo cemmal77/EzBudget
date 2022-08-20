@@ -7,3 +7,7 @@
 /EzBudget.Web/bin/Debug/netcoreapp3.1
 /EzBudget.Web/.vs/EzBudget.Web
 /.vs/EzBudget.Web
+/EzBudget.Api/bin/Debug/netcoreapp3.1
+/EzBudget.Api/obj
+/EzBudget.Data/bin/Debug/netstandard2.1
+/EzBudget.Data/obj
