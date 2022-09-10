@@ -37,7 +37,7 @@ namespace EzBudget.Api.Controllers
 
         [HttpPut]
         [Route("Update")]
-        public IActionResult Update(Budget budget)
+        public IActionResult Update([FromBody] Budget budget)
         {
             this.budgetDataProcessor.Update(budget);
             this.budgetSummariesDataProcessor.Update(new BudgetSummary(budget));

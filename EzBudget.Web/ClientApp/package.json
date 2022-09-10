@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "/EzBudget.Web",
+  "proxy": "http://localhost:92",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "bootstrap": "~4.6.1",

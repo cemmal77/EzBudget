@@ -43,11 +43,17 @@ namespace EzBudget.Api
             services.AddSingleton<IJsonWriter, JsonWriter>();
             services.AddSingleton<IBudgetDataProcessor, BudgetDataProcessor>();
             services.AddSingleton<IBudgetSummariesDataProcessor, BudgetSummariesDataProcessor>();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:3000")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("1.0", new OpenApiInfo { Title = "EzBudget API", Version = "1.0" });
-                c.IncludeXmlComments(xmlPath);
+                //c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -64,6 +70,8 @@ namespace EzBudget.Api
             
 
             app.UseRouting();
+
+            app.UseCors("MyPolicy");
 
             app.UseAuthorization();
 

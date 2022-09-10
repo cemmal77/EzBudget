@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Spinner } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, Spinner, Button } from 'reactstrap';
 import { isFetching, isIdle } from '../state/CommunicationSlice';
 import config from '../config.json';
+
+const formatDate = (dateString) => {
+  return new Date(dateString).toLocaleDateString('en-us');
+};
 
 export const Dashboard = () => {
   const communicationState = useSelector((state) => state.communication);
   const dispatch = useDispatch();
   const [budgetSummaries, setBudgetSummaries] = useState([]);
 
-  const loadBudgetSummaries = () => {};
-
   useEffect(() => {
-    //dispatch(isFetching());
+    dispatch(isFetching());
     const url = `${config.API_BASE_URL}/BudgetSummaries`;
-    console.log(url);
     fetch(url)
       .then((response) => {
-        //dispatch(isIdle());
+        dispatch(isIdle());
         if (!response.ok) throw new Error();
         return response.json();
       })
       .then((json) => {
-        console.log('json: ', json);
+        console.log(json);
         setBudgetSummaries(json);
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <React.Fragment>
@@ -34,9 +35,19 @@ export const Dashboard = () => {
       <p>Welcome to the EZ Budget Dashboard!</p>
 
       {communicationState.isFetching && <Spinner color="primary">Loading...</Spinner>}
-      {communicationState.isIdle && (
+      {!communicationState.isFetching && (
         <div>
-          <p>Show summaries</p>
+          {budgetSummaries.map((item, index) => (
+            <Card key={index}>
+              <CardBody>
+                <CardTitle>{item.name}</CardTitle>
+                <CardSubtitle>
+                  {formatDate(item.startDate)} - {formatDate(item.endDate)}
+                </CardSubtitle>
+                <Button>Edit</Button>
+              </CardBody>
+            </Card>
+          ))}
         </div>
       )}
     </React.Fragment>
